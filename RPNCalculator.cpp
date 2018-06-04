@@ -6,8 +6,14 @@
 #include <cstdlib>
 
 bool RPNCalculator::isOperation(const String& token) {
-    // TODO - return true only if token is one of +, -, *, /
-    return false;
+      switch (token[0]) {
+        case '+' : return true;
+             case '-' : return true;
+             case '*' : return true;
+             case '/' : return true;
+     
+    
+    defult:return false;
 }
 
 double RPNCalculator::calculate(double v1, double v2, const String& token) {
@@ -33,7 +39,8 @@ double RPNCalculator::rpnCalc(const String& expression)
     while(t.hasMore()) {
         String token = t.nextToken();
         // TODO - implement the algorithm
-        if(isOperation())
+        if(isOperation(token)){push(calculate(pop().values,pop().values,token)).values}
+        else{push(parseValue(token)).values}
         // If the token is an operation
             // Pop two variables v2, v1 from the stack
             // Then push the result of calculate(v1, v2, token) to the stack
