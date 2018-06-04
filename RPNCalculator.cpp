@@ -49,7 +49,7 @@ double RPNCalculator::rpnCalc(const String& expression)
             // Then push the value on the stack
     }
     // TODO - uncomment this assert and return when the algorithm is implemented
-    // assert(values.size() == 1);
-    // return values.top();
+     assert(values.size() == 1);
+     return values.top();
     return 0;
 }
