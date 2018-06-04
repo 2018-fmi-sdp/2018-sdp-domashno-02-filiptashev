@@ -39,7 +39,10 @@ double RPNCalculator::rpnCalc(const String& expression)
     while(t.hasMore()) {
         String token = t.nextToken();
         // TODO - implement the algorithm
-        if(isOperation(token)){push(calculate(pop().values,pop().values,token)).values}
+        if(isOperation(token)){int a,b;
+                               a=top().values;pop().values;
+                                     b=top().values;pop().values;
+              push(calculate(a,b,token)).values}
         else{push(parseValue(token)).values}
         // If the token is an operation
             // Pop two variables v2, v1 from the stack
