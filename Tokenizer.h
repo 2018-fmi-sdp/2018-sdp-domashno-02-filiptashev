@@ -22,8 +22,8 @@ public:
     Tokenizer(const String& str) : _str(str), _nextToken(nullptr) {
         if(_str.len() > 0)
             _nextToken = _str.data();
-
-        // TODO - skip all the spaces
+skipSpaces().this;
+       
     }
 
     bool hasMore() const { return _nextToken && *_nextToken != '\0'; }
@@ -50,7 +50,7 @@ public:
 
 private:
     void skipSpaces() {
-        while(_nextToken /* && TODO _nextToken has not reached a ' '*/ && *_nextToken != '\0')
+        while(_nextToken && *_nextToken!=' ' && *_nextToken != '\0')
             ++_nextToken;
     }
 
