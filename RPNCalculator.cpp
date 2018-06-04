@@ -13,7 +13,10 @@ bool RPNCalculator::isOperation(const String& token) {
 double RPNCalculator::calculate(double v1, double v2, const String& token) {
     switch (token[0]) {
         case '+' : return v1 + v2;
-        // TODO - add proper cases for the other operations
+             case '-' : return v1 - v2;
+             case '*' : return v1 * v2;
+             case '/' : return v1 / v2;
+     
     }
 
     return 0; // Should not happen
@@ -30,6 +33,7 @@ double RPNCalculator::rpnCalc(const String& expression)
     while(t.hasMore()) {
         String token = t.nextToken();
         // TODO - implement the algorithm
+        if(isOperation())
         // If the token is an operation
             // Pop two variables v2, v1 from the stack
             // Then push the result of calculate(v1, v2, token) to the stack
