@@ -108,7 +108,7 @@ template <class T>
 inline T ListStack<T>::top() const
 {
     assert(!isEmpty());
-    T result; // = TODO - the value of the node at the beginning of the list
+    T result=_top->data; // = TODO - the value of the node at the beginning of the list
     return result;
 }
 
@@ -117,7 +117,7 @@ inline bool ListStack<T>::pop()
 {
     if (isEmpty())
         return false;
-
+_top=_top->next;
     // TODO - remove the node at the beginning of the linked list
     --_size;
     return true;
@@ -127,6 +127,9 @@ template <class T>
 inline void ListStack<T>::push(const T& value)
 {
     TNode<T>* tmp = new TNode<T>;
+   tmp->data = value;
+            tmp->next = _top;
+            _top = tmp;
     // TODO - add value in tmp node and place it in the
     //      begining of the linked list
     ++_size;
