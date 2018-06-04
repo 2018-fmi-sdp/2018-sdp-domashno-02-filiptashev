@@ -22,7 +22,7 @@ public:
     Tokenizer(const String& str) : _str(str), _nextToken(nullptr) {
         if(_str.len() > 0)
             _nextToken = _str.data();
-skipSpaces().this;
+skipSpaces();
        
     }
 
